@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails funkyhotgrits: development" uuid="632774d8-1c73-494b-a953-73ae00a97ca9">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails funkyhotgrits: test" uuid="bade6977-e86d-47b1-afb5-2cc6a7f45a9b">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails funkyhotgrits: production" uuid="5584dd0f-0d40-45e5-b635-d1fdd8f5ab42">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

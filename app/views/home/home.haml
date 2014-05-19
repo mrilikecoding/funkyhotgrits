@@ -1,0 +1,23 @@
+= content_for :js_placeholder do
+  = javascript_include_tag 'manifests/home_manifest'
+= content_for :css_placeholder do
+  = stylesheet_link_tag 'manifests/home_manifest'
+
+.site-wrapper.main
+  .site-wrapper-inner
+    .cover-container
+      .masthead.clearfix
+        .inner
+          %h3.masthead-brand Funky Hot Grits
+          %ul.nav.masthead-nav
+            %li
+              %a{href: "#"} Contact
+      .inner.cover
+        %h1.cover-heading Cover your page.
+        %p.lead Funky Hot Grits is an eclectic soul band based in Chicago. Our music features high energy, danceable groves that appeal to a wide audience. FHG represents a new Chicago sound born at the crossroads of the region. We draw inspration from musical traditions along the Mississippi and her tributaries - Memphis soul, New Orleans jazz, Chicago rhythym and blues - to create a fresh cohesive voice. Our sound bears the imprint of soul pioneers like Stevie Wonder, Bill Withers, and James Brown, and contemporary voices like Ray LaMontagne, Marc Broussard, and Amy Winehouse. Funky Hot Grits just recorded its debut EP that is set to release the Summer of 2014.
+        %p.lead
+          %a.btn.btn-lg.btn-default{href: "#"} Learn more
+      .mastfoot
+        .inner
+          %p
+            Copywright 2014 Funky Hot Grits
