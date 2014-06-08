@@ -34,9 +34,42 @@ FunkyHotGrits.home = (function($, document, window, undefined) {
 
     function init() {
 
-            var BV = new $.BigVideo();
-            BV.init();
-            BV.show('http://pdl.vimeocdn.com/28702/014/202991467.mp4?token2=1400291403_b50c8e0c484b3bae8f08c07440a8af85',{ambient:true});
+        // global. currently active menu item
+        var current_item = 0;
+
+        // settings
+        var section_hide_time = 1300;
+        var section_show_time = 1300;
+
+        // Switch section
+        $("a", '.mainmenu').click(function(){
+            if( ! $(this).hasClass('active') ) {
+                current_item = this;
+                // close all visible divs with the class of .section
+                $('.section:visible').fadeOut( section_hide_time, function() {
+                    $('a', '.mainmenu').removeClass( 'active' );
+                    $(current_item).addClass( 'active' );
+                    var new_section = $( $(current_item).attr('href') );
+                    new_section.fadeIn( section_show_time );
+                } );
+            }
+            return false;
+        });
+
+        var BV = new $.BigVideo();
+        BV.init();
+
+        var url = "http://www.urbanjuju.com/fhg_statics/FHG%20Website%20Background.mp4"
+
+
+        if (Modernizr.touch) {
+            BV.show('video-poster.jpg');
+        } else {
+            BV.show(url,{ambient:true});
+            BV.getPlayer().on('durationchange',function(){
+                $('#big-video-wrap').fadeIn(3000);
+            });
+        }
 
     }
 
