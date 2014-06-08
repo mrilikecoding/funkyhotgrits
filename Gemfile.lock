@@ -71,6 +71,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    newrelic_rpm (3.8.1.221)
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -144,6 +145,7 @@ DEPENDENCIES
   capistrano-rails
   debugger
   haml
+  newrelic_rpm
   pg
   rails (= 4.1.1)
   rails_12factor

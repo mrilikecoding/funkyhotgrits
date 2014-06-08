@@ -14,6 +14,7 @@ gem 'better_errors'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 gem 'capistrano-rails', group: :development
 gem 'debugger', group: [:development, :test]
