@@ -42,12 +42,11 @@ FunkyHotGrits.home = (function($, document, window, undefined) {
         var url = "http://www.urbanjuju.com/fhg_statics/FHGwebbg.mp4"
 
 
-        if (Modernizr.touch) {
-            BV.show('video-poster.jpg');
-        } else {
+        if (!Modernizr.touch) {
             BV.show(url,{ambient:true});
+
             BV.getPlayer().on('durationchange',function(){
-                $videobg.fadeIn(3000);
+                fadeInVideo();
             });
         }
 
@@ -68,9 +67,10 @@ FunkyHotGrits.home = (function($, document, window, undefined) {
             });
 
             if($(this).hasClass('home')){
-                $videobg.fadeIn(500, function(){
-                    BV.getPlayer().play()
-                });
+                BV.getPlayer().play()
+                setTimeout(function(){
+                    fadeInVideo();
+                }, 500);
             }
 
             if(!$(this).hasClass('active')) {
@@ -85,6 +85,12 @@ FunkyHotGrits.home = (function($, document, window, undefined) {
             }
             return false;
         });
+
+        function fadeInVideo(){
+            setTimeout(function(){
+                $videobg.fadeIn(3000);
+            }, 2500);
+        }
 
 
     }

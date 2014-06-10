@@ -17,17 +17,15 @@
     %b
 
 %nav.navbar{role: "navigation"}
-  .container-fluid
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.mainmenu.nav.navbar-nav
-        %li
-          %a.active.home{href: "#home"} Home
-        %li
-          %a{href: "#about"} About
-        %li
-          %a{href: "#book"} Book
-        %li
-          %a{href: "#connect"} Connect
+  %ul.mainmenu.nav.navbar-nav.text-center
+    %li
+      %a.active.home{href: "#home"} Home
+    %li
+      %a{href: "#about"} About
+    %li
+      %a{href: "#book"} Book
+    %li
+      %a{href: "#connect"} Connect
 
 %section#home.section
   .col-md-12
@@ -40,7 +38,7 @@
   .container
     .row
       .col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1.text-center
-        = image_tag "fhgred.png"
+        = image_tag "fhgred.png", class: "img-responsive"
         %p
           -#%a.btn.btn-default.btn-lg{href: "http://funkyhotgrits.bandcamp.com"}
           %a.btn.btn-default.btn-lg{href: "#"}
@@ -56,7 +54,7 @@
         .row
           .col-sm-8.col-sm-offset-2
             %p.text-center
-              %iframe{allowfullscreen: "", frameborder: "0", height: "281", mozallowfullscreen: "", src: "//player.vimeo.com/video/97485360", webkitallowfullscreen: "", width: "500"}
+              %iframe.img-responsive{allowfullscreen: "", frameborder: "0", mozallowfullscreen: "", src: "//player.vimeo.com/video/97485360", webkitallowfullscreen: "", width: "100%"}
             %p Funky Hot Grits is an eclectic soul band based in Chicago. We draw inspiration from musical traditions along the Mississippi and her tributaries - Memphis soul, New Orleans Funk, Chicago rhythm and blues- to create a fresh cohesive voice.
             %p Our sound contains elements of Stevie Wonder, Bill Withers, and James Brown, and contemporary voices like Ray LaMontagne, Marc Broussard, and Amy Winehouse.
           .col-sm-2
@@ -93,13 +91,11 @@
                   %i.fa.fa-check-circle-o.form-control-feedback
             .hidden
               = f.input_field :nickname, :hint => 'Leave this field blank!'
-            = f.button :submit, 'Send message', :class=> "btn btn-info pull-right"
-          %hr.featurette-divider.hidden-lg/
-        .col-lg-5.col-md-push-1
-          %address
-            %h3 Funky Hot Grits
-            %p.lead
-              Available for bookings in Chicago, Chicagoland, Indianapolis, Madison, and Milwaukee
+            = f.button :submit, 'Send message', :class=> "submit btn pull-right"
+        .clearfix.visible-sm.visible-xs
+        .col-lg-5.col-md-push-1.col-sm-12
+          %h3.cta Bring the funk...
+          %p We are available for bookings in Chicago, Chicagoland, Indianapolis, Madison, and Milwaukee
 
 
 %section#connect.section
