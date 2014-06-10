@@ -1,10 +1,12 @@
 html {
-  background:#000 url(../images/body4.jpg) no-repeat center center fixed;
+  background: rgb(38, 40, 79);
+;
   min-height:100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 body {
@@ -14,16 +16,30 @@ body {
   -webkit-overflow-scrolling: touch;
   line-height: 1.5em;
   font-size:14px;
-  font-family: Helvetica, Arial, sans-serif;
   color:#fff;
   color:rgba(255,255,255,.8);
   font-weight: normal;
 }
 
 
-.panel {
-  background: image_url('fhgyellow.jpg');
+.nav > li > a:hover, .nav > li > a:focus {
+  background: none;
   color: #E62C1C;
+}
+
+.nav > li > a.active {
+    color: #E62C1C;
+    &.home {
+      color: inherit;
+    }
+}
+
+.panel {
+  h1, h2, h3 {
+    color: #E62C1C;
+  }
+  color: #fff;
+  background: transparent;
 }
 
 
@@ -39,7 +55,7 @@ body {
 /********************************************************/
 .mainmenu { z-index: 999999; width:100%;  padding: 30px 0 0 0;}
 @media (min-width: 768px) {
-  .mainmenu { position: fixed; }
+//  .mainmenu { position: fixed; }
 }
 
 .navbar-toggle {
@@ -123,17 +139,17 @@ body {
   width: 100%;
   overflow:auto;
   height:100%;
-  padding-top:100px;
+//  padding-top:100px;
   padding-bottom:50px;
   display:none;
   top:0;
 }
 @media (min-width: 768px) {
-  .section { padding-top:160px;}
+//  .section { padding-top:160px;}
 }
 
 /* Show one of sections */
-#head {
+#home {
   display: block;
 }
 
@@ -151,7 +167,6 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 
 .title,
 .subtitle {
-  font-family: 'Wire One', Helvetica, Arial, sans-serif;
   font-weight:normal;
   font-size:7em;
   margin-bottom:15px;
@@ -378,155 +393,92 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 }
 
 
+.sunburst {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  background: rgb(38, 40, 79);
+}
 
+.sunburst .outer {
+  width: 150%;
+  height: 150%;
+  padding-top: 75%;
+  margin: -75% 0 0 -25%;
+  -webkit-animation-name: rotate1;
+  -webkit-animation-duration:45s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -moz-animation-name: rotate1;
+  -moz-animation-duration:85s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:linear;
+}
 
+.sunburst b {
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 90px 1000px;
+  margin: -180px 0 0 0;
+  border-color: transparent #1C1545;
+  border-style: solid;
+}
 
-//.main{
-//  -webkit-transition-duration: 0.6s;
-//  -moz-transition-duration: 0.6s;
-//  -ms-transition-duration: 0.6s;
-//  -o-transition-duration: 0.6s;
-//  transition-duration: 0.6s;
-//}
-//
-//
-//html,
-//body {
-//  height: 100%;
-////  background: image_url('fhgyellow.jpg');
-////  background-size: cover;
-//}
-//body {
-//  color: #000;
-//  background: #000;
-//  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-//  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-//
-//  .big-video-wrap {
-//    z-index: -1 !important;
-//  }
-//}
-//
-//.site-wrapper {
-//  text-align: center;
-//  display: table;
-//  width: 100%;
-//  height: 100%; /* For at least Firefox */
-//  min-height: 100%;
-//}
-//.site-wrapper-inner {
-//  display: table-cell;
-//  vertical-align: top;
-//}
-//.cover-container {
-//  margin-right: auto;
-//  margin-left: auto;
-//}
-//
-///* Padding for spacing */
-//.inner {
-//  padding: 30px;
-//}
-//
-//
-///*
-// * Header
-// */
-//.masthead-brand {
-//  margin-top: 10px;
-//  margin-bottom: 10px;
-//}
-//
-//.masthead-nav > li {
-//  display: inline-block;
-//}
-//.masthead-nav > li + li {
-//  margin-left: 20px;
-//}
-//.masthead-nav > li > a {
-//  padding-right: 0;
-//  padding-left: 0;
-//  font-size: 16px;
-//  font-weight: bold;
-//  color: #000; /* IE8 proofing */
-//  color: rgba(255,255,255,.75);
-//  border-bottom: 2px solid transparent;
-//}
-//.masthead-nav > li > a:hover,
-//.masthead-nav > li > a:focus {
-//  background-color: transparent;
-//  border-bottom-color: rgba(255,255,255,.25);
-//}
-//.masthead-nav > .active > a,
-//.masthead-nav > .active > a:hover,
-//.masthead-nav > .active > a:focus {
-//  color: #000;
-//  border-bottom-color: #000;
-//}
-//
-//@media (min-width: 768px) {
-//  .masthead-brand {
-//    float: left;
-//  }
-//  .masthead-nav {
-//    float: right;
-//  }
-//}
-//
-//
-///*
-// * Cover
-// */
-//
-//.cover {
-//  padding: 0 20px;
-//}
-//.cover .btn-lg {
-//  padding: 10px 20px;
-//  font-weight: bold;
-//}
-//
-//
-///*
-// * Footer
-// */
-//
-//.mastfoot {
-//  color: #999; /* IE8 proofing */
-//  color: rgba(255,255,255,.5);
-//}
-//
-//
-///*
-// * Affix and center
-// */
-//
-//@media (min-width: 768px) {
-//  /* Pull out the header and footer */
-//  .masthead {
-//    position: fixed;
-//    top: 0;
-//  }
-//  .mastfoot {
-//    position: fixed;
-//    bottom: 0;
-//  }
-//  /* Start the vertical centering */
-//  .site-wrapper-inner {
-//    vertical-align: middle;
-//  }
-//  /* Handle the widths */
-//  .masthead,
-//  .mastfoot,
-//  .cover-container {
-//    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-//  }
-//}
-//
-//@media (min-width: 992px) {
-//  .masthead,
-//  .mastfoot,
-//  .cover-container {
-//    width: 700px;
-//  }
-//}
+.sunburst b:nth-child(1) {
+  -webkit-transform:rotate(20deg);
+  -moz-transform:rotate(20deg);
+}
+
+.sunburst b:nth-child(2) {
+  -webkit-transform:rotate(40deg);
+  -moz-transform:rotate(40deg);
+}
+
+.sunburst b:nth-child(3) {
+  -webkit-transform:rotate(60deg);
+  -moz-transform:rotate(60deg);
+}
+
+.sunburst b:nth-child(4) {
+  -webkit-transform:rotate(80deg);
+  -moz-transform:rotate(80deg);
+}
+
+.sunburst b:nth-child(5) {
+  -webkit-transform:rotate(100deg);
+  -moz-transform:rotate(100deg);
+}
+
+.sunburst b:nth-child(6) {
+  -webkit-transform:rotate(120deg);
+  -moz-transform:rotate(120deg);
+}
+
+.sunburst b:nth-child(7) {
+  -webkit-transform:rotate(140deg);
+  -moz-transform:rotate(140deg);
+}
+
+.sunburst b:nth-child(8) {
+  -webkit-transform:rotate(160deg);
+  -moz-transform:rotate(160deg);
+}
+
+.sunburst b:nth-child(9) {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+}
+
+@-webkit-keyframes rotate1 {
+  from { -webkit-transform: rotate(0deg); }
+  to   { -webkit-transform: rotate(20deg); }
+}
+
+@-moz-keyframes rotate1 {
+  from { -moz-transform: rotate(0deg); }
+  to   { -moz-transform: rotate(20deg); }
+}
+

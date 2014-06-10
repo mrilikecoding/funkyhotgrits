@@ -3,30 +3,48 @@
 = content_for :css_placeholder do
   = stylesheet_link_tag 'manifests/home_manifest'
 
-%nav.mainmenu
-  .container
-    .dropdown
-      %button.navbar-toggle{"data-toggle" => "dropdown", type: "button"}
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %ul.dropdown-menu{"aria-labelledby" => "dLabel", role: "menu"}
+.sunburst
+  .outer
+    %b
+    %b
+    %b
+    %b
+    %b
+    %b
+    %b
+    %b
+    %b
+    %b
+
+%nav.navbar{role: "navigation"}
+  .container-fluid
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.mainmenu.nav.navbar-nav
         %li
-          %a.active{href: "#head"} Home
+          %a.active.home{href: "#home"} Home
         %li
           %a{href: "#about"} About
         %li
-          %a{href: "#themes"} Book
+          %a{href: "#book"} Book
         %li
-          %a{href: "#contact"} Connect
-%section#head.section
+          %a{href: "#connect"} Connect
+
+%section#home.section
+  .col-md-12
+    .alert-container.col-md-6.col-md-offset-3
+      - flash.each do |name, msg|
+        - if msg.is_a?(String)
+          %div{class: "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}"}
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+            = content_tag :div, msg, :id => "flash_#{name}"
   .container
     .row
       .col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1.text-center
         = image_tag "fhgred.png"
         %p
-          %a.btn.btn-default.btn-lg{href: "/download/"}
-            Coming soon...
+          -#%a.btn.btn-default.btn-lg{href: "http://funkyhotgrits.bandcamp.com"}
+          %a.btn.btn-default.btn-lg{href: "#"}
+            Coming June 20
             %br
             = image_tag "runaround.png"
 
@@ -39,19 +57,52 @@
           .col-sm-8.col-sm-offset-2
             %p.text-center
               %iframe{allowfullscreen: "", frameborder: "0", height: "281", mozallowfullscreen: "", src: "//player.vimeo.com/video/97485360", webkitallowfullscreen: "", width: "500"}
-            %p Funky Hot Grits is an eclectic soul band based in Chicago. Our music features high energy, danceable groves that appeal to a wide audience. FHG represents a new Chicago sound born at the crossroads of the region. We draw inspration from musical traditions along the Mississippi and her tributaries - Memphis soul, New Orleans jazz, Chicago rhythym and blues - to create a fresh cohesive voice. Our sound bears the imprint of soul pioneers like Stevie Wonder, Bill Withers, and James Brown, and contemporary voices like Ray LaMontagne, Marc Broussard, and Amy Winehouse. Funky Hot Grits just recorded its debut EP that is set to release the Summer of 2014.
+            %p Funky Hot Grits is an eclectic soul band based in Chicago. We draw inspiration from musical traditions along the Mississippi and her tributaries - Memphis soul, New Orleans Funk, Chicago rhythm and blues- to create a fresh cohesive voice.
+            %p Our sound contains elements of Stevie Wonder, Bill Withers, and James Brown, and contemporary voices like Ray LaMontagne, Marc Broussard, and Amy Winehouse.
           .col-sm-2
 
-%section#themes.section
+%section#book.section
   .container
     .panel.panel-deafault
       .panel-body
         %h2.text-center.title Book us
         %p.text-center
-        %p.lead.text-center
-          Test testpjadslfkjasdflj jasdflkj asldkfadl
+        %p Funky Hot Grits recently recorded its debut EP “Runaround” that is set to release this summer. The group formed in 2011 and we have performed at various venues around Chicago including at the Double Door, Mayne Stage, Hard Rock Cafe, Elbo Room, and Court Theater.
+        %p Funky Hot Grits is excited to partner with venues to create a dynamic atmosphere and increase traffic for live music and entertainment. Our shows feature energetic, sophisticated soul music that is accessible to a broad audience. We are excited to headline shows as well as support touring national artists.
+      .row
 
-%section#contact.section
+        .col-lg-6
+          = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f|
+            .form-group
+              %label Your Name
+              .input-group
+                = f.input_field :name, :class => "form-control", :required => true, :placeholder => "Enter Name"
+                %span.input-group-addon
+                  %i.fa.fa-check-circle-o.form-control-feedback
+            .form-group
+              %label Your Email
+              .input-group
+                = f.input_field :email, :class => "form-control", :required => true, :placeholder => "Enter Email", :pattern => false
+                %span.input-group-addon
+                  %i.fa.fa-check-circle-o.form-control-feedback
+            .form-group
+              %label Message
+              .input-group
+                = f.input_field :message, :as => :text, :required => true, :class => "form-control", :rows => "5"
+                %span.input-group-addon
+                  %i.fa.fa-check-circle-o.form-control-feedback
+            .hidden
+              = f.input_field :nickname, :hint => 'Leave this field blank!'
+            = f.button :submit, 'Send message', :class=> "btn btn-info pull-right"
+          %hr.featurette-divider.hidden-lg/
+        .col-lg-5.col-md-push-1
+          %address
+            %h3 Funky Hot Grits
+            %p.lead
+              Available for bookings in Chicago, Chicagoland, Indianapolis, Madison, and Milwaukee
+
+
+%section#connect.section
   .container
     .panel.panel-deafault
       .panel-body
@@ -60,10 +111,10 @@
           .col-sm-8.col-sm-offset-2.text-center
             %ul.list-inline.list-social
               %li
-                %a.btn.btn-link{href: "https://twitter.com/serggg"}
+                %a.btn.btn-link{href: "https://twitter.com/funkygritsmusic"}
                   %i.fa.fa-twitter.fa-fw
                   Twitter
               %li
-                %a.btn.btn-link{href: "https://github.com/pozhilov"}
-                  %i.fa.fa-github.fa-fw
+                %a.btn.btn-link{href: "https://www.facebook.com/FunkyHotGritsMusic"}
+                  %i.fa.fa-facebook.fa-fw
                   Facebook
