@@ -19,13 +19,13 @@
 %nav.navbar{role: "navigation"}
   %ul.mainmenu.nav.navbar-nav.text-center
     %li
-      %a.active.home{href: "#home"} Home
+      %a.active.home{href: "#home", "data-track" => "nav home"} Home
     %li
-      %a{href: "#about"} About
+      %a{href: "#about", "data-track" => "nav about"} About
     %li
-      %a{href: "#book"} Book
+      %a{href: "#book", "data-track" => "nav book"} Book
     %li
-      %a{href: "#connect"} Connect
+      %a{href: "#connect", "data-track" => "nav connect"} Connect
 
 %section#home.section
   .col-md-12
@@ -41,7 +41,7 @@
         = image_tag "fhgred.png", class: "img-responsive"
         %p
           -#%a.btn.btn-default.btn-lg{href: "http://funkyhotgrits.bandcamp.com"}
-          %a.btn.btn-default.btn-lg{href: "#"}
+          %a.btn.btn-default.btn-lg{href: "#","data-track" => "runaround link"}
             Coming June 20
             %br
             = image_tag "runaround.png"
@@ -107,11 +107,12 @@
           .col-sm-8.col-sm-offset-2.text-center
             %ul.list-inline.list-social
               %li
-                %a.btn.btn-link{href: "https://twitter.com/funkygritsmusic"}
+                %a.btn.btn-link{href: "https://twitter.com/funkygritsmusic", "data-track" => "twitter"}
                   %i.fa.fa-twitter.fa-fw
                   Twitter
               %li
-                %a.btn.btn-link{href: "https://www.facebook.com/FunkyHotGritsMusic"}
+                %a.btn.btn-link{href: "https://www.facebook.com/FunkyHotGritsMusic", "data-track" => "facebook"}
                   %i.fa.fa-facebook.fa-fw
                   Facebook
             = image_tag "fhgfull.png"
+
