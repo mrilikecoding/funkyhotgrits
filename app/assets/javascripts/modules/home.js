@@ -101,9 +101,11 @@ FunkyHotGrits.home = (function($, document, window, undefined) {
         });
 
         function fadeInVideo(){
-            setTimeout(function(){
-                $videobg.fadeIn(3000);
-            }, 2500);
+            if (!window.mobilecheck()) {
+                setTimeout(function(){
+                    $videobg.fadeIn(3000);
+                }, 2500);
+            }
         }
 
 
