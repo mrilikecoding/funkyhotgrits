@@ -40,7 +40,7 @@
       .col-md-10.col-lg-10.col-md-offset-1.col-lg-offset-1.text-center
         = image_tag "fhgred.png", class: "img-responsive"
         %p
-          %a.btn.btn-default.btn-lg{href: "http://music.funkyhotgrits.com", "data-track" => "runaround link"}
+          %a.runaround-link.btn.btn-default.btn-lg{href: "http://music.funkyhotgrits.com", "data-track" => "runaround link"}
             Pre-order now
             %br
             = image_tag "runaround.png"
@@ -60,41 +60,42 @@
 
 %section#book.section
   .container
-    .panel.panel-deafault
-      .panel-body
+    .row
+      .col-lg-12
         %h2.text-center.title Book us
         %p.text-center
         %p Funky Hot Grits recently recorded its debut EP “Runaround” that is set to release this summer. The group formed in 2011 and we have performed at various venues around Chicago including at the Double Door, Mayne Stage, Hard Rock Cafe, Elbo Room, and Court Theater.
         %p Funky Hot Grits is excited to partner with venues to create a dynamic atmosphere and increase traffic for live music and entertainment. Our shows feature energetic, sophisticated soul music that is accessible to a broad audience. We are excited to headline shows as well as support touring national artists.
-      .row
-
-        .col-lg-6
-          = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f|
-            .form-group
-              %label Your Name
-              .input-group
-                = f.input_field :name, :class => "form-control", :required => true, :placeholder => "Enter Name"
-                %span.input-group-addon
-                  %i.fa.fa-check-circle-o.form-control-feedback
-            .form-group
-              %label Your Email
-              .input-group
-                = f.input_field :email, :class => "form-control", :required => true, :placeholder => "Enter Email", :pattern => false
-                %span.input-group-addon
-                  %i.fa.fa-check-circle-o.form-control-feedback
-            .form-group
-              %label Message
-              .input-group
-                = f.input_field :message, :as => :text, :required => true, :class => "form-control", :rows => "5"
-                %span.input-group-addon
-                  %i.fa.fa-check-circle-o.form-control-feedback
-            .hidden
-              = f.input_field :nickname, :hint => 'Leave this field blank!'
-            = f.button :submit, 'Send message', :class=> "submit btn pull-right"
-        .clearfix.visible-sm.visible-xs
-        .col-lg-5.col-md-push-1.col-sm-12
-          %h3.cta Bring the funk...
-          %p We are available for bookings in Chicago, Chicagoland, Indianapolis, Madison, and Milwaukee
+    .row
+      .col-lg-6
+        .panel.panel-deafault
+          .panel-body
+            = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f|
+              .form-group
+                %label Your Name
+                .input-group
+                  = f.input_field :name, :class => "form-control", :required => true, :placeholder => "Enter Name"
+                  %span.input-group-addon
+                    %i.fa.fa-check-circle-o.form-control-feedback
+              .form-group
+                %label Your Email
+                .input-group
+                  = f.input_field :email, :class => "form-control", :required => true, :placeholder => "Enter Email", :pattern => false
+                  %span.input-group-addon
+                    %i.fa.fa-check-circle-o.form-control-feedback
+              .form-group
+                %label Message
+                .input-group
+                  = f.input_field :message, :as => :text, :required => true, :class => "form-control", :rows => "5"
+                  %span.input-group-addon
+                    %i.fa.fa-check-circle-o.form-control-feedback
+              .hidden
+                = f.input_field :nickname, :hint => 'Leave this field blank!'
+              = f.button :submit, 'Send message', :class=> "submit btn pull-right"
+      .clearfix.visible-sm.visible-xs
+      .col-lg-5.col-md-push-1.col-sm-12
+        %h3.cta Bring the funk...
+        %p We are available for bookings in Chicago, Chicagoland, Indianapolis, Madison, and Milwaukee
 
 
 %section#connect.section
