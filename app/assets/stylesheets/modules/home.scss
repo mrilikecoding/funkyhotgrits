@@ -43,6 +43,10 @@ body {
     }
 }
 
+.title.book {
+    color: #E62C1C;
+}
+
 .panel {
   h1, h2, h3 {
     color: #E62C1C;
@@ -84,13 +88,9 @@ body {
   width: 100%;
   overflow:auto;
   height:100%;
-//  padding-top:100px;
   padding-bottom:50px;
   display:none;
   top:0;
-}
-@media (min-width: 768px) {
-//  .section { padding-top:160px;}
 }
 
 /* Show one of sections */
@@ -210,31 +210,6 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
   background: rgba(255,255,255,.5);
 }
 
-
-
-
-
-/********************************************************/
-/*                 Everything else                      */
-/********************************************************/
-
-.list-social .btn {
-  font-size:1.3em;
-}
-.list-social .btn:hover, .list-social .btn:active, .list-social .btn:focus {
-  text-decoration: none;
-}
-
-
-/* Social buttons in the footer */
-#social {
-  margin-top:50px;
-  margin-bottom:50px;
-}
-#social .wrapper {
-  width:340px;
-  margin:0 auto;
-}
 
 
 //bg config
